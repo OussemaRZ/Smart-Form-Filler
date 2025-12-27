@@ -207,6 +207,11 @@ textarea {
   margin-bottom: 8px;
 }
 
+.textarea-header > div {
+  display: flex;
+  gap: 8px;
+}
+
 .checkbox-group {
   margin: 16px 0;
 }

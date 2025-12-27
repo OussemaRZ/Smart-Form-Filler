@@ -1,37 +1,5 @@
 // Smart Form Filler - Settings Script
 
-const DEFAULT_TEMPLATE = `# Mes Informations Personnelles
-
-## Identité
-- Nom complet :
-- Prénom :
-- Nom :
-- Date de naissance :
-- Lieu de naissance :
-
-## Contact
-- Email :
-- Téléphone :
-- Téléphone fixe :
-
-## Adresse
-- Adresse complète :
-- Rue :
-- Numéro :
-- Code postal :
-- Ville :
-- Pays :
-
-## Professionnel
-- Société :
-- Poste :
-- Années d'expérience :
-
-## Autres
-- Nationalité :
-- Permis de conduire :
-`;
-
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
@@ -42,6 +10,9 @@ async function init() {
   document.getElementById('toggleApiKey').addEventListener('click', toggleApiKeyVisibility);
   document.getElementById('testApiBtn').addEventListener('click', testApiConnection);
   document.getElementById('loadTemplateBtn').addEventListener('click', loadTemplate);
+  document.getElementById('importFileBtn').addEventListener('click', importFile);
+  document.getElementById('exportFileBtn').addEventListener('click', exportFile);
+  document.getElementById('fileInput').addEventListener('change', handleFileSelect);
   document.getElementById('showExampleBtn').addEventListener('click', showExample);
   document.getElementById('saveBtn').addEventListener('click', saveSettings);
   document.getElementById('resetBtn').addEventListener('click', resetSettings);
@@ -149,15 +120,95 @@ async function testApiConnection() {
   }
 }
 
-function loadTemplate() {
+async function loadTemplate() {
   const userDataTextarea = document.getElementById('userData');
 
   if (userDataTextarea.value.trim() && !confirm('Voulez-vous remplacer le contenu actuel par le modèle ?')) {
     return;
   }
 
-  userDataTextarea.value = DEFAULT_TEMPLATE;
-  showStatus('saveStatus', 'Modèle chargé avec succès.', 'info');
+  try {
+    // Charger le template depuis le fichier template.md
+    const response = await fetch(chrome.runtime.getURL('config/template.md'));
+
+    if (!response.ok) {
+      throw new Error('Impossible de charger le template');
+    }
+
+    const templateContent = await response.text();
+    userDataTextarea.value = templateContent;
+    showStatus('saveStatus', 'Modèle chargé avec succès.', 'info');
+
+  } catch (error) {
+    console.error('Erreur lors du chargement du template:', error);
+    showStatus('saveStatus', 'Erreur lors du chargement du modèle.', 'error');
+  }
+}
+
+function importFile() {
+  // Déclencher le sélecteur de fichier
+  document.getElementById('fileInput').click();
+}
+
+function handleFileSelect(event) {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  // Vérifier l'extension
+  if (!file.name.endsWith('.md') && !file.name.endsWith('.txt')) {
+    showStatus('saveStatus', 'Veuillez sélectionner un fichier .md ou .txt', 'error');
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const content = e.target.result;
+    document.getElementById('userData').value = content;
+    showStatus('saveStatus', `✅ Fichier "${file.name}" importé avec succès !`, 'success');
+  };
+
+  reader.onerror = function() {
+    showStatus('saveStatus', 'Erreur lors de la lecture du fichier.', 'error');
+  };
+
+  reader.readAsText(file);
+
+  // Réinitialiser l'input pour permettre de réimporter le même fichier
+  event.target.value = '';
+}
+
+function exportFile() {
+  const userData = document.getElementById('userData').value;
+
+  if (!userData.trim()) {
+    showStatus('saveStatus', 'Aucune donnée à exporter.', 'error');
+    return;
+  }
+
+  try {
+    // Créer un blob avec le contenu
+    const blob = new Blob([userData], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+
+    // Créer un lien de téléchargement
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'mes-informations.md';
+    document.body.appendChild(a);
+    a.click();
+
+    // Nettoyer
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showStatus('saveStatus', '✅ Fichier exporté avec succès !', 'success');
+
+  } catch (error) {
+    console.error('Erreur lors de l\'export:', error);
+    showStatus('saveStatus', 'Erreur lors de l\'export du fichier.', 'error');
+  }
 }
 
 function showExample(e) {

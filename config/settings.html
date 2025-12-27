@@ -50,8 +50,13 @@
         <div class="input-group">
           <div class="textarea-header">
             <label for="userData">Document Markdown :</label>
-            <button id="loadTemplateBtn" class="link-btn">Charger un modèle</button>
+            <div>
+              <button id="loadTemplateBtn" class="link-btn">Charger le modèle</button>
+              <button id="importFileBtn" class="link-btn">📥 Importer .md</button>
+              <button id="exportFileBtn" class="link-btn">📤 Exporter .md</button>
+            </div>
           </div>
+          <input type="file" id="fileInput" accept=".md,.txt" style="display: none;">
           <textarea
             id="userData"
             rows="20"
