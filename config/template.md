@@ -1,21 +1,21 @@
 # Mes Informations - Candidature Stage
 
 ## Identité
-- Nom complet : ABDERRAHIM ABDESSEMED
-- Nom : ABDESSEMED
-- Prénom : Abderrahim
+- Nom complet :
+- Nom :
+- Prénom :
 - Date de naissance :
 - Lieu de naissance :
-- Nationalité : Algérienne
-- Situation familiale : Célibataire
+- Nationalité :
+- Situation familiale :
 
 ## Contact
-- Email : abdessemed.abderrahim0@gmail.com
+- Email :
 - Email secondaire :
-- Téléphone : +33 6 66 65 70 43
+- Téléphone :
 - Téléphone fixe :
-- LinkedIn : https://www.linkedin.com/in/abderrahim-abdessemed
-- GitHub : https://github.com/abdessemed
+- LinkedIn :
+- GitHub :
 - Portfolio :
 - Site web personnel :
 
@@ -30,46 +30,46 @@
 - Région :
 
 ## Formation Actuelle
-- Établissement : Paris-Saclay University
-- Diplôme préparé : Master 2 Multimedia Networking : Deep Learning, Coding & Security
-- Niveau d'études : Bac+5
-- Année d'études : Master 2
-- Année universitaire : 2025-2026
-- Spécialité : Artificial Intelligence and Industrial Networks
-- Date de début : Septembre 2025
-- Date de fin prévue : Juin 2026
+- Établissement :
+- Diplôme préparé :
+- Niveau d'études : 
+- Année d'études : 
+- Année universitaire :
+- Spécialité :
+- Date de début : 
+- Date de fin prévue :
 
 ## Formation Précédente
-- Établissement précédent : Higher National School RE2SD
-- Diplôme obtenu : Diplôme d'Ingénieur en IA et Réseaux Industriels
-- Année d'obtention : 2025
+- Établissement précédent : 
+- Diplôme obtenu :
+- Année d'obtention : 
 - Mention :
 
 ## Informations Professionnelles
-- Titre du poste recherché : Stage en Intelligence Artificielle / Deep Learning
-- Type de stage : Stage de fin d'études
-- Durée souhaitée : 6 mois
+- Titre du poste recherché : 
+- Type de stage : 
+- Durée souhaitée :
 - Date de début disponible :
 - Date de fin disponible :
-- Domaine : Intelligence Artificielle, Deep Learning, Réseaux
-- Secteur d'activité : Tech, Industrie, Énergie
-- Expérience professionnelle : 1 an (stages)
-- Dernier employeur : L'Ours
-- Dernier poste : Stagiaire AI in Oil and Gas Services
+- Domaine : 
+- Secteur d'activité : 
+- Expérience professionnelle :
+- Dernier employeur : 
+- Dernier poste :
 
 ## Compétences Techniques
-- Langages de programmation : Python, SQL
-- Frameworks AI/ML : TensorFlow, PyTorch, Scikit-learn
-- Bibliothèques Python : Pandas, NumPy, Matplotlib
-- Deep Learning : Transformers, CNN, LSTM, Diffusion models, DNN compression
-- Autres compétences : Reinforcement Learning, Data Visualization, PLCs, Microcontrollers
-- Outils : Jupyter Notebook, MySQL, Git, LaTeX, Microsoft Office
-- Réseaux : Industrial Networks, Computer Networks
+- Langages de programmation : 
+- Frameworks AI/ML : 
+- Bibliothèques Python :
+- Deep Learning : 
+- Autres compétences : 
+- Outils : 
+- Réseaux :
 
 ## Langues
-- Langue maternelle : Arabe
-- Anglais : Courant
-- Français : Intermédiaire
+- Langue maternelle : 
+- Anglais :
+- Français :
 - Autre langue 1 :
 - Niveau autre langue 1 :
 
@@ -92,8 +92,8 @@
 - Hybride : Oui
 
 ## Informations Complémentaires
-- Motivation : Seeking to apply my knowledge and skills in Artificial Intelligence, Information Science and Networking through research projects in a company. Passionate about solving complex problems using AI and Deep Learning.
-- Centres d'intérêt : Deep Learning, Transformers, Compression models, Energy optimization
+- Motivation :
+- Centres d'intérêt : 
 - Références : Disponibles sur demande
 - Rémunération souhaitée :
 - Gratification minimale attendue :
