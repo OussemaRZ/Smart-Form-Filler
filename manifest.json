@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Form Filler",
+  "version": "1.0.0",
+  "description": "Remplissage intelligent de formulaires web avec IA",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/field-detector.js", "content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "config/settings.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

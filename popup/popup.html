@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Form Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Form Filler</h1>
+      <button id="settingsBtn" class="icon-btn" title="Paramètres">⚙️</button>
+    </header>
+
+    <main>
+      <div id="statusSection" class="status-section">
+        <div id="statusIcon">📋</div>
+        <p id="statusText">Prêt à remplir les formulaires</p>
+      </div>
+
+      <div id="fieldsInfo" class="info-box">
+        <span id="fieldsCount">0</span> champ(s) détecté(s)
+      </div>
+
+      <button id="fillBtn" class="primary-btn" disabled>
+        Remplir le formulaire
+      </button>
+
+      <div id="errorMessage" class="error-message" style="display: none;"></div>
+      <div id="successMessage" class="success-message" style="display: none;"></div>
+    </main>
+
+    <footer>
+      <small>Propulsé par Gemini AI</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Form Filler - Configuration</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚙️ Configuration</h1>
+      <p class="subtitle">Configurez votre extension de remplissage intelligent</p>
+    </header>
+
+    <main>
+      <section class="config-section">
+        <h2>1. Clé API Gemini</h2>
+        <p class="description">
+          Obtenez une clé API gratuite sur
+          <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>
+        </p>
+
+        <div class="input-group">
+          <label for="apiKey">Clé API Gemini :</label>
+          <div class="input-with-toggle">
+            <input
+              type="password"
+              id="apiKey"
+              placeholder="AIzaSy..."
+              autocomplete="off"
+            >
+            <button id="toggleApiKey" type="button" class="toggle-btn" title="Afficher/Masquer">
+              👁️
+            </button>
+          </div>
+          <small class="hint">Votre clé API est stockée localement et de manière sécurisée</small>
+        </div>
+
+        <button id="testApiBtn" class="secondary-btn">Tester la connexion</button>
+        <div id="apiStatus" class="status-message"></div>
+      </section>
+
+      <section class="config-section">
+        <h2>2. Vos informations personnelles</h2>
+        <p class="description">
+          Entrez vos informations au format Markdown. L'IA utilisera ces données pour remplir les formulaires.
+        </p>
+
+        <div class="input-group">
+          <div class="textarea-header">
+            <label for="userData">Document Markdown :</label>
+            <button id="loadTemplateBtn" class="link-btn">Charger un modèle</button>
+          </div>
+          <textarea
+            id="userData"
+            rows="20"
+            placeholder="# Mes Informations Personnelles
+
+## Identité
+- Nom complet :
+- Prénom :
+- Nom :
+- Date de naissance :
+
+## Contact
+- Email :
+- Téléphone :
+
+## Adresse
+- Adresse complète :
+- Rue :
+- Code postal :
+- Ville :
+- Pays :
+"
+          ></textarea>
+          <small class="hint">Utilisez le format Markdown avec des listes à puces.
+            <a href="#" id="showExampleBtn">Voir un exemple</a>
+          </small>
+        </div>
+      </section>
+
+      <section class="config-section">
+        <h2>3. Options avancées</h2>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="syncData" checked>
+            <span>Synchroniser les données entre appareils (Chrome Sync)</span>
+          </label>
+        </div>
+      </section>
+
+      <div class="action-buttons">
+        <button id="saveBtn" class="primary-btn">Enregistrer la configuration</button>
+        <button id="resetBtn" class="danger-btn">Réinitialiser</button>
+      </div>
+
+      <div id="saveStatus" class="status-message"></div>
+    </main>
+
+    <footer>
+      <p>Smart Form Filler v1.0.0</p>
+      <p class="privacy">
+        🔒 Toutes vos données restent sur votre appareil. Aucune information n'est envoyée
+        à des serveurs tiers (sauf les requêtes API Gemini pour l'analyse).
+      </p>
+    </footer>
+  </div>
+
+  <!-- Modal pour l'exemple -->
+  <div id="exampleModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Exemple de document Markdown</h3>
+      <pre><code># Mes Informations Personnelles
+
+## Identité
+- Nom complet : Jean Dupont
+- Prénom : Jean
+- Nom : Dupont
+- Date de naissance : 15/03/1990
+- Lieu de naissance : Paris, France
+
+## Contact
+- Email : jean.dupont@example.com
+- Téléphone : +33 6 12 34 56 78
+- Téléphone fixe : +33 1 23 45 67 89
+
+## Adresse
+- Adresse complète : 123 Rue de la Paix, 75001 Paris, France
+- Rue : 123 Rue de la Paix
+- Code postal : 75001
+- Ville : Paris
+- Pays : France
+
+## Professionnel
+- Société : TechCorp
+- Poste : Développeur Senior
+- Années d'expérience : 8 ans
+
+## Autres
+- Nationalité : Française
+- Numéro de sécurité sociale : 1 90 03 75 123 456 78</code></pre>
+      <button class="secondary-btn close-modal-btn">Fermer</button>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
