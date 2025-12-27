@@ -1,7 +1,7 @@
 // Smart Form Filler - Gemini API Client
 
 const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
-const MODEL_NAME = 'gemini-pro';
+const MODEL_NAME = 'gemini-1.5-flash'; // Ou 'gemini-1.5-pro' pour plus de performance
 
 /**
  * Appelle l'API Gemini pour analyser les champs et mapper les valeurs
